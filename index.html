@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github-Issue-Tracker</title>
+    <link rel="shortcut icon" href="./assets/incident-report.png" type="image/x-icon">
+
+    <!-- tailwind+daisy  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="min-h-screen bg-base-200 flex items-center justify-center px-4 py-10">
+
+    <!-- Login Section -->
+    <div
+        class="border-2 border-cyan-300 rounded-2xl bg-white w-full max-w-sm sm:max-w-md p-8 flex flex-col items-center gap-6">
+
+        <!-- Logo + Title -->
+        <div class="flex flex-col items-center gap-3">
+            <div class="rounded-full w-16 h-16 flex items-center justify-center">
+                <img src="./assets/github-logo.png" alt="">
+            </div>
+            <div class="text-center">
+                <h1 class="text-2xl font-bold text-gray-900">GitHub Issues Tracker</h1>
+                <p class="text-sm text-gray-500 mt-1">Sign in to manage your issues</p>
+            </div>
+        </div>
+
+        <!-- Form Fields -->
+        <div class="w-full flex flex-col gap-4">
+
+            <!-- Username -->
+            <div class="flex flex-col gap-1">
+                <label class="text-sm font-semibold text-gray-800">Username</label>
+                <input type="text" placeholder="Enter Username"
+                    class="input input-bordered w-full rounded-lg bg-white text-gray-700 placeholder-gray-400" />
+            </div>
+
+            <!-- Password -->
+            <div class="flex flex-col gap-1">
+                <label class="text-sm font-semibold text-gray-800">Password</label>
+                <input type="password" placeholder="Enter Password"
+                    class="input input-bordered w-full rounded-lg bg-white text-gray-700 placeholder-gray-400" />
+            </div>
+
+        </div>
+
+        <!-- Sign In Button -->
+        <button
+            class="btn w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-base font-semibold border-none">
+            Sign In
+        </button>
+
+        <!-- Divider -->
+        <div class="divider text-gray-400 text-xs font-semibold tracking-widest w-full">OR</div>
+
+        <!-- Demo Credentials -->
+        <div class="w-full flex flex-col items-center gap-2">
+            <p class="text-xs text-gray-400 font-medium">Demo Credentials:</p>
+            <div
+                class="w-full bg-gray-50 border border-gray-200 rounded-lg px-5 py-3 text-center text-sm text-gray-600">
+                <p><span class="font-bold text-gray-800">Username:</span> admin</p>
+                <p><span class="font-bold text-gray-800">Password:</span> admin123</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
