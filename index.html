@@ -44,14 +44,14 @@
             <!-- Username -->
             <div class="flex flex-col gap-1">
                 <label class="text-sm font-semibold text-gray-800">Username</label>
-                <input type="text" placeholder="Enter Username"
+                <input id="js-user-name" type="text" placeholder="Enter Username"
                     class="input input-bordered w-full rounded-lg bg-white text-gray-700 placeholder-gray-400" />
             </div>
 
             <!-- Password -->
             <div class="flex flex-col gap-1">
                 <label class="text-sm font-semibold text-gray-800">Password</label>
-                <input type="password" placeholder="Enter Password"
+                <input id="js-password" type="password" placeholder="Enter Password"
                     class="input input-bordered w-full rounded-lg bg-white text-gray-700 placeholder-gray-400" />
             </div>
 
@@ -59,6 +59,7 @@
 
         <!-- Sign In Button -->
         <button
+            id="js-login-btn"
             class="btn w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-base font-semibold border-none">
             Sign In
         </button>
@@ -78,6 +79,7 @@
 
     </div>
 
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>
