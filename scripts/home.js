@@ -197,3 +197,33 @@ const handleCategoryClick = (event) => {
 document.querySelector("#js-issue-category").addEventListener('click', handleCategoryClick);
 
 loadIssues();
+
+const searchIssues = async () => {
+    const searchText = document.getElementById("js-search-input").value;
+    const loader = document.getElementById("loader");
+    const container = document.getElementById("js-issue-cart");
+
+    if (!searchText.trim()) {
+        issueCartDetails(allIssues);
+        return;
+    }
+    
+    loader.classList.remove("hidden");
+    container.innerHTML = "";
+
+    try {
+        const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`);
+        const data = await res.json();
+        loader.classList.add("hidden");
+        issueCartDetails(data.data);
+    } catch (err) {
+        console.log(err);
+        loader.innerHTML = "Something went wrong";
+    }
+}
+
+document.getElementById("js-search-input").addEventListener('keydown', (e) => {
+        if (e.key === "Enter") searchIssues();
+    });
+
+document.querySelector('.fa-magnifying-glass').addEventListener('click', searchIssues);
