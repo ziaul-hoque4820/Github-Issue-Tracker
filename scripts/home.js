@@ -1,6 +1,14 @@
-const loadIssues = () => {
+let allIssues = [];
+
+const loadIssues = (category = 'all') => {
     const loader = document.getElementById("loader");
     const container = document.getElementById("js-issue-cart");
+
+    if (allIssues.length > 0) {
+        const filtered = category === 'all' ? allIssues : allIssues.filter(issue => issue.status === category);
+        issueCartDetails(filtered);
+        return;
+    }
 
     loader.classList.remove("hidden");
     container.innerHTML = "";
@@ -11,6 +19,7 @@ const loadIssues = () => {
         .then(res => res.json())
         .then(data => {
             loader.classList.add('hidden');
+            allIssues = data.data;
             issueCartDetails(data.data);
         })
         .catch(err => {
@@ -124,6 +133,7 @@ const issueCartDetails = (data) => {
     let issueHTML = "";
 
     console.log(data);
+    document.getElementById('js-issue-counter').innerText = `${data.length} Issues`;
 
     data.forEach(issue => {
         issueHTML += `
@@ -165,5 +175,25 @@ const issueCartDetails = (data) => {
     const issueCartHTMl = document.getElementById("js-issue-cart").innerHTML = issueHTML;
 
 }
+
+const handleCategoryClick = (event) => {
+    const clickBtn = event.target;
+
+    if (clickBtn.tagName !== "BUTTON") return;
+
+    const category = clickBtn.innerText.trim().toLowerCase();
+
+    document.querySelectorAll("#js-issue-category button").forEach(btn => {
+        btn.classList.remove('bg-indigo-600', 'text-white');
+        btn.classList.add('bg-white', 'text-gray-700');
+    });
+
+    clickBtn.classList.remove('bg-white', 'text-gray-700');
+    clickBtn.classList.add('bg-indigo-600', 'text-white');
+
+    loadIssues(category);
+}
+
+document.querySelector("#js-issue-category").addEventListener('click', handleCategoryClick);
 
 loadIssues();
