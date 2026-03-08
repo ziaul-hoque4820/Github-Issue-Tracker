@@ -50,7 +50,7 @@
     <main class="px-6 xl:px-44 lg:px-10 my-5 ">
         <!-- Filter Tabs -->
         <div class="border-1 border-cyan-300 rounded-2xl bg-gray-200 px-6 py-4 mb-4">
-            <div class="flex items-center gap-3">
+            <div id="js-issue-category" class="flex items-center gap-3">
                 <button
                     class="btn bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold border-none rounded-lg px-6">All</button>
                 <button
@@ -71,7 +71,7 @@
                         <img class="w-6 h-6" src="./assets/Aperture.png" alt="icon">
                     </div>
                     <div>
-                        <h2 class="text-xl font-bold text-gray-900">50 Issues</h2>
+                        <h2 id="js-issue-counter" class="text-xl font-bold text-gray-900">50 Issues</h2>
                         <p class="text-sm text-gray-400">Track and manage your project issues</p>
                     </div>
                 </div>
@@ -89,218 +89,13 @@
             </div>
 
             <!-- Issues Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-
-                <!-- Card 1 – Open, HIGH, BUG + HELP WANTED -->
-                <div class="rounded-xl p-4 flex flex-col gap-3 bg-white hover:shadow-2xl">
-                    <div class="flex items-center justify-between">
-                        <img class="w-5 h-5" src="./assets/Open-Status.png" alt="icon">
-                        <span class="badge bg-red-100 text-red-500 border-none text-xs font-semibold px-3">HIGH</span>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-bold text-gray-900 leading-snug">Fix Navigation Menu On Mobile Devices
-                        </h3>
-                        <p class="text-xs text-gray-400 mt-1">The navigation menu doesn't collapse properly on mobile
-                            devices...</p>
-                    </div>
-                    <div class="flex items-center gap-2 flex-wrap">
-                        <span class="badge bg-orange-100 text-orange-500 border-none text-xs font-semibold gap-1">
-                            <i class="fa-solid fa-bug"></i>
-                            BUG</span>
-                        <span class="badge bg-yellow-100 text-yellow-600 border-none text-xs font-semibold gap-1">
-                            <i class="fa-solid fa-bell-concierge"></i>
-                            HELP WANTED</span>
-                    </div>
-                    <div class="text-xs text-gray-400 mt-auto">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-
-                <!-- Card 2 – Open, MEDIUM, BUG + HELP WANTED -->
-                <div class="rounded-xl p-4 flex flex-col gap-3 bg-white hover:shadow-2xl">
-                    <div class="flex items-center justify-between">
-                        <img class="w-5 h-5" src="./assets/Open-Status.png" alt="icon">
-                        <span
-                            class="badge bg-yellow-100 text-yellow-600 border-none text-xs font-semibold px-3">MEDIUM</span>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-bold text-gray-900 leading-snug">Fix Navigation Menu On Mobile Devices
-                        </h3>
-                        <p class="text-xs text-gray-400 mt-1">The navigation menu doesn't collapse properly on mobile
-                            devices...</p>
-                    </div>
-                    <div class="flex items-center gap-2 flex-wrap">
-                        <span class="badge bg-orange-100 text-orange-500 border-none text-xs font-semibold">
-                            <i class="fa-solid fa-bug"></i>
-                            BUG</span>
-                        <span class="badge bg-yellow-100 text-yellow-600 border-none text-xs font-semibold">
-                            <i class="fa-solid fa-bell-concierge"></i>
-                            HELP WANTED</span>
-                    </div>
-                    <div class="text-xs text-gray-400 mt-auto">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 – Closed, LOW, BUG + HELP WANTED -->
-                <div class="rounded-xl p-4 flex flex-col gap-3 bg-white hover:shadow-2xl">
-                    <div class="flex items-center justify-between">
-                        <img class="w-5 h-5" src="./assets/Closed- Status .png" alt="icon">
-                        <span class="badge bg-gray-100 text-gray-400 border-none text-xs font-semibold px-3">LOW</span>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-bold text-gray-900 leading-snug">Fix Navigation Menu On Mobile Devices
-                        </h3>
-                        <p class="text-xs text-gray-400 mt-1">The navigation menu doesn't collapse properly on mobile
-                            devices...</p>
-                    </div>
-                    <div class="flex items-center gap-2 flex-wrap">
-                        <span class="badge bg-orange-100 text-orange-500 border-none text-xs font-semibold">
-                            <i class="fa-solid fa-bug"></i>
-                            BUG</span>
-                        <span class="badge bg-yellow-100 text-yellow-600 border-none text-xs font-semibold"><i
-                                class="fa-solid fa-bell-concierge"></i>
-                            HELP WANTED</span>
-                    </div>
-                    <div class="text-xs text-gray-400 mt-auto">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-
-                <!-- Card 4 – Open, HIGH, BUG + HELP WANTED -->
-                <div class="rounded-xl p-4 flex flex-col gap-3 bg-white hover:shadow-2xl">
-                    <div class="flex items-center justify-between">
-                        <img class="w-5 h-5" src="./assets/Open-Status.png" alt="icon">
-                        <span class="badge bg-red-100 text-red-500 border-none text-xs font-semibold px-3">HIGH</span>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-bold text-gray-900 leading-snug">Fix Navigation Menu On Mobile Devices
-                        </h3>
-                        <p class="text-xs text-gray-400 mt-1">The navigation menu doesn't collapse properly on mobile
-                            devices...</p>
-                    </div>
-                    <div class="flex items-center gap-2 flex-wrap">
-                        <span class="badge bg-orange-100 text-orange-500 border-none text-xs font-semibold">
-                            <i class="fa-solid fa-bug"></i>
-                            BUG</span>
-                        <span class="badge bg-yellow-100 text-yellow-600 border-none text-xs font-semibold"><i
-                                class="fa-solid fa-bell-concierge"></i>
-                            HELP WANTED</span>
-                    </div>
-                    <div class="text-xs text-gray-400 mt-auto">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-
-                <!-- Card 5 – Open, HIGH, BUG + HELP WANTED -->
-                <div class="rounded-xl p-4 flex flex-col gap-3 bg-white hover:shadow-2xl">
-                    <div class="flex items-center justify-between">
-                        <img class="w-5 h-5" src="./assets/Open-Status.png" alt="icon">
-                        <span class="badge bg-red-100 text-red-500 border-none text-xs font-semibold px-3">HIGH</span>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-bold text-gray-900 leading-snug">Fix Navigation Menu On Mobile Devices
-                        </h3>
-                        <p class="text-xs text-gray-400 mt-1">The navigation menu doesn't collapse properly on mobile
-                            devices...</p>
-                    </div>
-                    <div class="flex items-center gap-2 flex-wrap">
-                        <span class="badge bg-orange-100 text-orange-500 border-none text-xs font-semibold">
-                            <i class="fa-solid fa-bug"></i>
-                            BUG</span>
-                        <span class="badge bg-yellow-100 text-yellow-600 border-none text-xs font-semibold">
-                            <i class="fa-solid fa-bell-concierge"></i>
-                            HELP WANTED</span>
-                    </div>
-                    <div class="text-xs text-gray-400 mt-auto">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-
-                <!-- Card 6 – Closed, LOW, ENHANCEMENT -->
-                <div class="rounded-xl p-4 flex flex-col gap-3 bg-white hover:shadow-2xl">
-                    <div class="flex items-center justify-between">
-                        <img class="w-5 h-5" src="./assets/Closed- Status .png" alt="icon">
-                        <span class="badge bg-gray-100 text-gray-400 border-none text-xs font-semibold px-3">LOW</span>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-bold text-gray-900 leading-snug">Fix Navigation Menu On Mobile Devices
-                        </h3>
-                        <p class="text-xs text-gray-400 mt-1">The navigation menu doesn't collapse properly on mobile
-                            devices...</p>
-                    </div>
-                    <div class="flex items-center gap-2 flex-wrap">
-                        <span class="badge bg-green-100 text-green-600 border-none text-xs font-semibold">✨
-                            ENHANCEMENT</span>
-                    </div>
-                    <div class="text-xs text-gray-400 mt-auto">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-
-                <!-- Card 7 – Open, MEDIUM, BUG + HELP WANTED -->
-                <div class="rounded-xl p-4 flex flex-col gap-3 bg-white hover:shadow-2xl">
-                    <div class="flex items-center justify-between">
-                        <img class="w-5 h-5" src="./assets/Open-Status.png" alt="icon">
-                        <span
-                            class="badge bg-yellow-100 text-yellow-600 border-none text-xs font-semibold px-3">MEDIUM</span>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-bold text-gray-900 leading-snug">Fix Navigation Menu On Mobile Devices
-                        </h3>
-                        <p class="text-xs text-gray-400 mt-1">The navigation menu doesn't collapse properly on mobile
-                            devices...</p>
-                    </div>
-                    <div class="flex items-center gap-2 flex-wrap">
-                        <span class="badge bg-orange-100 text-orange-500 border-none text-xs font-semibold">
-                            <i class="fa-solid fa-bug"></i>
-                            BUG</span>
-                        <span class="badge bg-yellow-100 text-yellow-600 border-none text-xs font-semibold">
-                            <i class="fa-solid fa-bell-concierge"></i>
-                            HELP WANTED</span>
-                    </div>
-                    <div class="text-xs text-gray-400 mt-auto">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-
-                <!-- Card 8 – Open, HIGH, BUG + HELP WANTED -->
-                <div class="rounded-xl p-4 flex flex-col gap-3 bg-white hover:shadow-2xl">
-                    <div class="flex items-center justify-between">
-                        <img class="w-5 h-5" src="./assets/Open-Status.png" alt="icon">
-                        <span class="badge bg-red-100 text-red-500 border-none text-xs font-semibold px-3">HIGH</span>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-bold text-gray-900 leading-snug">Fix Navigation Menu On Mobile Devices
-                        </h3>
-                        <p class="text-xs text-gray-400 mt-1">The navigation menu doesn't collapse properly on mobile
-                            devices...</p>
-                    </div>
-                    <div class="flex items-center gap-2 flex-wrap">
-                        <span class="badge bg-orange-100 text-orange-500 border-none text-xs font-semibold">
-                            <i class="fa-solid fa-bug"></i>
-                            BUG</span>
-                        <span class="badge bg-yellow-100 text-yellow-600 border-none text-xs font-semibold">
-                            <i class="fa-solid fa-bell-concierge"></i>
-                            HELP WANTED</span>
-                    </div>
-                    <div class="text-xs text-gray-400 mt-auto">
-                        <p>#1 by john_doe</p>
-                        <p>1/15/2024</p>
-                    </div>
-                </div>
-
+            <div id="js-issue-cart" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- js code inject here -->
+            
             </div>
         </div>
     </main>
-
+    <script src="./scripts/home.js"></script>
 </body>
 
 </html>
