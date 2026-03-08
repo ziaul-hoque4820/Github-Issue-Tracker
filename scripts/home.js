@@ -1,10 +1,22 @@
 const loadIssues = () => {
+    const loader = document.getElementById("loader");
+    const container = document.getElementById("js-issue-cart");
+
+    loader.classList.remove("hidden");
+    container.innerHTML = "";
 
     let api = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
 
     fetch(api)
         .then(res => res.json())
-        .then(data => issueCartDetails(data.data));
+        .then(data => {
+            loader.classList.add('hidden');
+            issueCartDetails(data.data);
+        })
+        .catch(err => {
+            console.log(err);
+            loader.innerHTML = "Something went wrong"
+        })
 }
 
 const issueCartDetails = (data) => {
@@ -48,8 +60,8 @@ const issueCartDetails = (data) => {
             </div>
         `
 
-        const issueCartHTMl = document.getElementById("js-issue-cart").innerHTML = issueHTML;
     })
+    const issueCartHTMl = document.getElementById("js-issue-cart").innerHTML = issueHTML;
 
 }
 
